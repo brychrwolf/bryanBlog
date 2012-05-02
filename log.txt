@@ -60,6 +60,452 @@ Prototype
 		To git@github.com:brychrwol/bryanBlog.git
 		 * [new branch]      master -> master
 		Branch master set up to track remote branch master from origin.
+	Install Zinnia via pip
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>pip install django-blog-zinnia
+		Downloading/unpacking django-blog-zinnia
+		  Downloading django-blog-zinnia-0.10.1.tar.gz (608Kb): 608Kb downloaded
+		  Running setup.py egg_info for package django-blog-zinnia
+			no previously-included directories found matching 'docs\build'
+			no previously-included directories found matching 'docs\epydoc'
+			no previously-included directories found matching 'docs\coverage'
+			no previously-included directories found matching 'zinnia\static\zinnia\css\.sass-cache'
+		Downloading/unpacking BeautifulSoup>=3.2.0 (from django-blog-zinnia)
+		  Downloading BeautifulSoup-3.2.1.tar.gz
+		  Running setup.py egg_info for package BeautifulSoup
+		Downloading/unpacking django-mptt>=0.5.1,<0.6 (from django-blog-zinnia)
+		  Downloading django-mptt-0.5.2.tar.gz (70Kb): 70Kb downloaded
+		  Running setup.py egg_info for package django-mptt
+			warning: no files found matching '*.json' under directory 'mptt'
+		Downloading/unpacking django-tagging>=0.3.1 (from django-blog-zinnia)
+		  Downloading django-tagging-0.3.1.tar.gz
+		  Running setup.py egg_info for package django-tagging
+		Downloading/unpacking django-xmlrpc>=0.1.3 (from django-blog-zinnia)
+		  Downloading django-xmlrpc-0.1.4.tar.gz
+		  Running setup.py egg_info for package django-xmlrpc
+		Downloading/unpacking pyparsing>=1.5.5 (from django-blog-zinnia)
+		  Downloading pyparsing-1.5.6.zip (1.7Mb): 1.7Mb downloaded
+		  Running setup.py egg_info for package pyparsing
+		Installing collected packages: django-blog-zinnia, BeautifulSoup, django-mptt, django-tagging, djang
+		o-xmlrpc, pyparsing
+		  Running setup.py install for django-blog-zinnia
+			no previously-included directories found matching 'docs\build'
+			no previously-included directories found matching 'docs\epydoc'
+			no previously-included directories found matching 'docs\coverage'
+			no previously-included directories found matching 'zinnia\static\zinnia\css\.sass-cache'
+		  Running setup.py install for BeautifulSoup
+		  Running setup.py install for django-mptt
+			warning: no files found matching '*.json' under directory 'mptt'
+		  Running setup.py install for django-tagging
+		  Running setup.py install for django-xmlrpc
+		  Running setup.py install for pyparsing
+		Successfully installed django-blog-zinnia BeautifulSoup django-mptt django-tagging django-xmlrpc pyp
+		arsing
+		Cleaning up...
+	Create the bryanBlog database in postgreSQL
+		Read the documentation on PostgreSQL
+		Restart the shell
+		Try to create the database
+			(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>createdb bryanBlogDb
+			'createdb' is not recognized as an internal or external command,
+			operable program or batch file.
+		Add C:\Program Files\PostgreSQL\9.1\bin to the PATH envinronmental variable
+		Restart the shell
+		Reactivate the virtual environment
+			C:\Users\Initia7_B>cd C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+			C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>venv\Scripts\activate.bat
+			(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>
+		Try again to create the database
+			(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>createdb bryanBlogDb
+			(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>createdb bryanBlogDb
+			Password:
+			createdb: could not connect to database postgres: FATAL:  password authentication failed for user "I
+			nitia7_B"
+		Research how create users in PostgreSQL
+			http://confluence.atlassian.com/display/CONF30/Database+Setup+for+PostgreSQL+on+Windows
+			*password for postgresql was set during install!*
+		Create new role for the bryanBlog
+			Open pgAdminIII
+			Add login role bryanBlog_admin
+			Add new batabase bryanBlogDb with bryanBlog_admin as the owner
+	Edit settings.py:
+		Add zinnia applications to INSTALLED_APP
+			'tagging',
+			'mptt',
+			'zinnia',
+		Add ADMINS entry for myself
+			('Bryan Wolfford', 'bryan@wolfford.com'),
+		Set DATABASES to:
+			 'default': {
+			'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+			'NAME': 'bryanBlogDb',                      # Or path to database file if using sqlite3.
+			'USER': 'bryanBlog_admin',                      # Not used with sqlite3.
+			'PASSWORD': 'bryanBlog_admin',                 # Not used with sqlite3.
+			'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+			'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+		Edit settings.py: Edit TEMPLATE_DIRS for venv and heroku 
+			'/app/polls/templates',
+			'C:/Users/Initia7_B/Documents/HPU/CSCI 3771/pollsOnHeroku/polls/templates',
+		Add TEMPLATE_CONTEXT_PROCESSORS for zennia
+			  'django.core.context_processors.auth',
+			  'django.core.context_processors.i18n',
+			  'django.core.context_processors.request',
+			  'django.core.context_processors.media',
+			  'django.core.context_processors.static',
+			  'zinnia.context_processors.version',) # Optional
+		Add TEMPLATE_DIRS for venv and heroku
+			'/app/bryanBlog/templates',
+			'C:/Users/Initia7_B/Documents/HPU/CSCI 3771/csci3771finalProj/bryanBlog/templates',
+	Sync the databases with Django
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncdb
+		Traceback (most recent call last):
+		  File "manage.py", line 10, in <module>
+			execute_from_command_line(sys.argv)
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\c
+		ore\management\__init__.py", line 443, in execute_from_command_line
+			utility.execute()
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\c
+		ore\management\__init__.py", line 382, in execute
+			self.fetch_command(subcommand).run_from_argv(self.argv)
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\c
+		ore\management\__init__.py", line 261, in fetch_command
+			klass = load_command_class(app_name, subcommand)
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\c
+		ore\management\__init__.py", line 69, in load_command_class
+			module = import_module('%s.management.commands.%s' % (app_name, name))
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\u
+		tils\importlib.py", line 35, in import_module
+			__import__(name)
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\c
+		ore\management\commands\syncdb.py", line 8, in <module>
+			from django.core.management.sql import custom_sql_for_model, emit_post_sync_signal
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\c
+		ore\management\sql.py", line 6, in <module>
+			from django.db import models
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\d
+		b\__init__.py", line 40, in <module>
+			backend = load_backend(connection.settings_dict['ENGINE'])
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\d
+		b\__init__.py", line 34, in __getattr__
+			return getattr(connections[DEFAULT_DB_ALIAS], item)
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\d
+		b\utils.py", line 92, in __getitem__
+			backend = load_backend(db['ENGINE'])
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\d
+		b\utils.py", line 24, in load_backend
+			return import_module('.base', backend_name)
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\u
+		tils\importlib.py", line 35, in import_module
+			__import__(name)
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\d
+		b\backends\postgresql_psycopg2\base.py", line 13, in <module>
+			from django.db.backends.postgresql_psycopg2.creation import DatabaseCreation
+		  File "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib\site-packages\django\d
+		b\backends\postgresql_psycopg2\creation.py", line 1, in <module>
+			import psycopg2.extensions
+		ImportError: No module named psycopg2.extensions
+	Oops. Try installing psycopg2 to the venv with pip
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>pip install pyscopg2
+		Downloading/unpacking pyscopg2
+		  Could not find any downloads that satisfy the requirement pyscopg2
+		No distributions at all found for pyscopg2
+		Storing complete log in C:\Users\Initia7_B\AppData\Roaming\pip\pip.log
+
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>pip install psycopg2
+		Downloading/unpacking psycopg2
+		  Downloading psycopg2-2.4.5.tar.gz (719Kb): 719Kb downloaded
+		  Running setup.py egg_info for package psycopg2
+
+			no previously-included directories found matching 'doc\src\_build'
+		Installing collected packages: psycopg2
+		  Running setup.py install for psycopg2
+			building 'psycopg2._psycopg' extension
+			error: Unable to find vcvarsall.bat
+			Complete output from command "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\
+		Scripts\python.exe" -c "import setuptools;__file__='C:\\Users\\Initia7_B\\Documents\\HPU\\CSCI 3771\
+		\csci3771finalProj\\venv\\build\\psycopg2\\setup.py';exec(compile(open(__file__).read().replace('\r\
+		n', '\n'), __file__, 'exec'))" install --single-version-externally-managed --record c:\users\initia~
+		1\appdata\local\temp\pip-ruzz8e-record\install-record.txt --install-headers "C:\Users\Initia7_B\Docu
+		ments\HPU\CSCI 3771\csci3771finalProj\venv\include\site\python2.7":
+			running install
+
+		running build
+
+		running build_py
+
+		creating build
+
+		creating build\lib.win32-2.7
+
+		creating build\lib.win32-2.7\psycopg2
+
+		copying lib\errorcodes.py -> build\lib.win32-2.7\psycopg2
+
+		copying lib\extensions.py -> build\lib.win32-2.7\psycopg2
+
+		copying lib\extras.py -> build\lib.win32-2.7\psycopg2
+
+		copying lib\pool.py -> build\lib.win32-2.7\psycopg2
+
+		copying lib\psycopg1.py -> build\lib.win32-2.7\psycopg2
+
+		copying lib\tz.py -> build\lib.win32-2.7\psycopg2
+
+		copying lib\__init__.py -> build\lib.win32-2.7\psycopg2
+
+		creating build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\dbapi20.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\dbapi20_tpc.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\testconfig.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\testutils.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_async.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_bugX000.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_bug_gc.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_cancel.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_connection.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_copy.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_cursor.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_dates.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_extras_dictcursor.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_green.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_lobject.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_module.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_notify.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_psycopg2_dbapi20.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_quote.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_transaction.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_types_basic.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\test_types_extras.py -> build\lib.win32-2.7\psycopg2\tests
+
+		copying tests\__init__.py -> build\lib.win32-2.7\psycopg2\tests
+
+		running build_ext
+
+		building 'psycopg2._psycopg' extension
+
+		error: Unable to find vcvarsall.bat
+
+		----------------------------------------
+		Command "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\Scripts\python.exe" -c "i
+		mport setuptools;__file__='C:\\Users\\Initia7_B\\Documents\\HPU\\CSCI 3771\\csci3771finalProj\\venv\
+		\build\\psycopg2\\setup.py';exec(compile(open(__file__).read().replace('\r\n', '\n'), __file__, 'exe
+		c'))" install --single-version-externally-managed --record c:\users\initia~1\appdata\local\temp\pip-
+		ruzz8e-record\install-record.txt --install-headers "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3
+		771finalProj\venv\include\site\python2.7" failed with error code 1 in C:\Users\Initia7_B\Documents\H
+		PU\CSCI 3771\csci3771finalProj\venv\build\psycopg2
+		Storing complete log in C:\Users\Initia7_B\AppData\Roaming\pip\pip.log
+	Oops. Repair the "error: Unable to find vcvarsall.bat" problem
+		Edit the venv\Lib\distutils\distutils.cfg, add:
+			[build]
+			compiler=mingw32
+	Try again installing psycopg2 to the venv with pip
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>pip install psycopg2
+		Downloading/unpacking psycopg2
+		  Running setup.py egg_info for package psycopg2
+
+			no previously-included directories found matching 'doc\src\_build'
+		Installing collected packages: psycopg2
+		  Running setup.py install for psycopg2
+			building 'psycopg2._psycopg' extension
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\psycopgmodule.c -o
+		build\temp.win32-2.7\Release\psycopg\psycopgmodule.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\green.c -o build\te
+		mp.win32-2.7\Release\psycopg\green.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\pqpath.c -o build\t
+		emp.win32-2.7\Release\psycopg\pqpath.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\utils.c -o build\te
+		mp.win32-2.7\Release\psycopg\utils.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\bytes_format.c -o b
+		uild\temp.win32-2.7\Release\psycopg\bytes_format.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\connection_int.c -o
+		 build\temp.win32-2.7\Release\psycopg\connection_int.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\connection_type.c -
+		o build\temp.win32-2.7\Release\psycopg\connection_type.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\cursor_int.c -o bui
+		ld\temp.win32-2.7\Release\psycopg\cursor_int.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\cursor_type.c -o bu
+		ild\temp.win32-2.7\Release\psycopg\cursor_type.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\lobject_int.c -o bu
+		ild\temp.win32-2.7\Release\psycopg\lobject_int.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\lobject_type.c -o b
+		uild\temp.win32-2.7\Release\psycopg\lobject_type.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\notify_type.c -o bu
+		ild\temp.win32-2.7\Release\psycopg\notify_type.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\xid_type.c -o build
+		\temp.win32-2.7\Release\psycopg\xid_type.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_asis.c -o b
+		uild\temp.win32-2.7\Release\psycopg\adapter_asis.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_binary.c -o
+		 build\temp.win32-2.7\Release\psycopg\adapter_binary.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_datetime.c
+		-o build\temp.win32-2.7\Release\psycopg\adapter_datetime.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_list.c -o b
+		uild\temp.win32-2.7\Release\psycopg\adapter_list.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_pboolean.c
+		-o build\temp.win32-2.7\Release\psycopg\adapter_pboolean.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_pdecimal.c
+		-o build\temp.win32-2.7\Release\psycopg\adapter_pdecimal.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_pint.c -o b
+		uild\temp.win32-2.7\Release\psycopg\adapter_pint.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_pfloat.c -o
+		 build\temp.win32-2.7\Release\psycopg\adapter_pfloat.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\adapter_qstring.c -
+		o build\temp.win32-2.7\Release\psycopg\adapter_qstring.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\microprotocols.c -o
+		 build\temp.win32-2.7\Release\psycopg\microprotocols.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\microprotocols_prot
+		o.c -o build\temp.win32-2.7\Release\psycopg\microprotocols_proto.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -DPSYCOPG_DEFAULT_PYDATETIME=1 "-DPSYCOPG_VERSION=\"2.4.5 (dt dec pq3 ext)\"
+		" -DPG_VERSION_HEX=0x090103 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -IC:\P
+		ython27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PC" -I. -IC:/PR
+		OGRA~1/POSTGR~1/9.1/include -IC:/PROGRA~1/POSTGR~1/9.1/include/server -c psycopg\typecast.c -o build
+		\temp.win32-2.7\Release\psycopg\typecast.o -O3 -fno-strict-aliasing
+			C:\MinGW\bin\cc.exe -shared -s build\temp.win32-2.7\Release\psycopg\psycopgmodule.o build\temp.w
+		in32-2.7\Release\psycopg\green.o build\temp.win32-2.7\Release\psycopg\pqpath.o build\temp.win32-2.7\
+		Release\psycopg\utils.o build\temp.win32-2.7\Release\psycopg\bytes_format.o build\temp.win32-2.7\Rel
+		ease\psycopg\connection_int.o build\temp.win32-2.7\Release\psycopg\connection_type.o build\temp.win3
+		2-2.7\Release\psycopg\cursor_int.o build\temp.win32-2.7\Release\psycopg\cursor_type.o build\temp.win
+		32-2.7\Release\psycopg\lobject_int.o build\temp.win32-2.7\Release\psycopg\lobject_type.o build\temp.
+		win32-2.7\Release\psycopg\notify_type.o build\temp.win32-2.7\Release\psycopg\xid_type.o build\temp.w
+		in32-2.7\Release\psycopg\adapter_asis.o build\temp.win32-2.7\Release\psycopg\adapter_binary.o build\
+		temp.win32-2.7\Release\psycopg\adapter_datetime.o build\temp.win32-2.7\Release\psycopg\adapter_list.
+		o build\temp.win32-2.7\Release\psycopg\adapter_pboolean.o build\temp.win32-2.7\Release\psycopg\adapt
+		er_pdecimal.o build\temp.win32-2.7\Release\psycopg\adapter_pint.o build\temp.win32-2.7\Release\psyco
+		pg\adapter_pfloat.o build\temp.win32-2.7\Release\psycopg\adapter_qstring.o build\temp.win32-2.7\Rele
+		ase\psycopg\microprotocols.o build\temp.win32-2.7\Release\psycopg\microprotocols_proto.o build\temp.
+		win32-2.7\Release\psycopg\typecast.o build\temp.win32-2.7\Release\psycopg\_psycopg.def -LC:\Python27
+		\Libs "-LC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\libs" "-LC:\Users\Initia7
+		_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PCbuild" -LC:/PROGRA~1/POSTGR~1/9.1/lib -lpython27
+		 -lmsvcr90 -lpq -lws2_32 -ladvapi32 -o build\lib.win32-2.7\psycopg2\_psycopg.pyd
+
+			no previously-included directories found matching 'doc\src\_build'
+		Successfully installed psycopg2
+		Cleaning up...
+	Try again Syncing the database with Django
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncdb
+		Creating tables ...
+		Creating table auth_permission
+		Creating table auth_group_permissions
+		Creating table auth_group
+		Creating table auth_user_user_permissions
+		Creating table auth_user_groups
+		Creating table auth_user
+		Creating table django_content_type
+		Creating table django_session
+		Creating table django_site
+
+		You just installed Django's auth system, which means you don't have any superusers defined.
+		Would you like to create one now? (yes/no): yes
+		Username (leave blank to use 'initia7_b'): bryanBlog_admin
+		E-mail address: bryan@wolfford.com^C
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncdb
+		Creating tables ...
+		Installing custom SQL ...
+		Installing indexes ...
+		Installed 0 object(s) from 0 fixture(s)		
+	*Accidentally ctrl c'd (quit) during the superuser setup
+		Manually run raw SQL through the postgreSQL interface to remedy the error
+			insert into auth_user (id, username, first_name, last_name, email, password, is_staff, is_active, is_
+			superuser, last_login, date_joined) VALUES (1, 'initia7_b', 'bryan', 'wolfford', 'bryan@wolfford.com', 
+			**EDITED**, TRUE, TRUE, TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+	Try again Syncing the database with Django
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncdb
+		Error: One or more models did not validate:
+		zinnia.entry: "image": To use ImageFields, you need to install the Python Imaging Library. Get it at
+		http://www.pythonware.com/products/pil/ .
 Testing
 	Test that the Django app runs in the local venv
 		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py runserver
@@ -69,4 +515,5 @@ Testing
 		Development server is running at http://127.0.0.1:8000/
 		Quit the server with CTRL-BREAK.
 		*http://localhost:8000/ = It worked! Congratulations on your first Django-powered page.
-	Test that the push gets to github
+	Verify that the first push gets to github
+	Verify the Twitter service hook pass through to bryan.wolfford.com
