@@ -127,7 +127,7 @@ Prototype
 			Open pgAdminIII
 			Add login role bryanBlog_admin
 			Add new batabase bryanBlogDb with bryanBlog_admin as the owner
-	Edit settings.py:
+	Configure settings.py:
 		Add zinnia applications to INSTALLED_APP
 			'tagging',
 			'mptt',
@@ -506,6 +506,625 @@ Prototype
 		Error: One or more models did not validate:
 		zinnia.entry: "image": To use ImageFields, you need to install the Python Imaging Library. Get it at
 		http://www.pythonware.com/products/pil/ .
+	Download and install http://effbot.org/downloads/PIL-1.1.7.win32-py2.7.exe
+	Close/shell reopen venv
+		C:\Users\Initia7_B>cd C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>venv\Scripts\activate.bat
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>
+	Try again Syncing the database with Django
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncdb
+		Error: One or more models did not validate:
+		zinnia.entry: "image": To use ImageFields, you need to install the Python Imaging Library. Get it at
+		http://www.pythonware.com/products/pil/ .
+	Try installing PIL with PIP in the venv
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>pip install pil
+		Downloading/unpacking pil
+		  Downloading PIL-1.1.7.tar.gz (506Kb): 506Kb downloaded
+		  Running setup.py egg_info for package pil
+			WARNING: '' not a valid package name; please use only.-separated package names in setup.py
+
+		Installing collected packages: pil
+		  Running setup.py install for pil
+			WARNING: '' not a valid package name; please use only.-separated package names in setup.py
+			building '_imaging' extension
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c _imaging.c -o build\temp.win32-2.7\Release\_imaging.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c decode.c -o build\temp.win32-2.7\Release\decode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c encode.c -o build\temp.win32-2.7\Release\encode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c map.c -o build\temp.win32-2.7\Release\map.o
+			In file included from c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/winnt.h:192:0,
+							 from c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/windef.h:253,
+							 from c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/windows.h:48,
+							 from map.c:35:
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:50:21: error: duplicate 'sig
+		ned'
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:50:21: error: two or more da
+		ta types in declaration specifiers
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:51:22: error: duplicate 'sho
+		rt'
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:56:23: error: duplicate 'uns
+		igned'
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:56:23: error: two or more da
+		ta types in declaration specifiers
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:57:24: error: duplicate 'uns
+		igned'
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:57:24: error: duplicate 'sho
+		rt'
+			error: command 'cc' failed with exit status 1
+			Complete output from command "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\
+		Scripts\python.exe" -c "import setuptools;__file__='C:\\Users\\Initia7_B\\Documents\\HPU\\CSCI 3771\
+		\csci3771finalProj\\venv\\build\\pil\\setup.py';exec(compile(open(__file__).read().replace('\r\n', '
+		\n'), __file__, 'exec'))" install --single-version-externally-managed --record c:\users\initia~1\app
+		data\local\temp\pip-gifhla-record\install-record.txt --install-headers "C:\Users\Initia7_B\Documents
+		\HPU\CSCI 3771\csci3771finalProj\venv\include\site\python2.7":
+			WARNING: '' not a valid package name; please use only.-separated package names in setup.py
+
+		running install
+
+		running build
+
+		running build_py
+
+		creating build
+
+		creating build\lib.win32-2.7
+
+		copying PIL\ArgImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\BdfFontFile.py -> build\lib.win32-2.7
+
+		copying PIL\BmpImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\BufrStubImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\ContainerIO.py -> build\lib.win32-2.7
+
+		copying PIL\CurImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\DcxImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\EpsImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\ExifTags.py -> build\lib.win32-2.7
+
+		copying PIL\FitsStubImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\FliImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\FontFile.py -> build\lib.win32-2.7
+
+		copying PIL\FpxImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\GbrImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\GdImageFile.py -> build\lib.win32-2.7
+
+		copying PIL\GifImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\GimpGradientFile.py -> build\lib.win32-2.7
+
+		copying PIL\GimpPaletteFile.py -> build\lib.win32-2.7
+
+		copying PIL\GribStubImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\Hdf5StubImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\IcnsImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\IcoImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\Image.py -> build\lib.win32-2.7
+
+		copying PIL\ImageChops.py -> build\lib.win32-2.7
+
+		copying PIL\ImageCms.py -> build\lib.win32-2.7
+
+		copying PIL\ImageColor.py -> build\lib.win32-2.7
+
+		copying PIL\ImageDraw.py -> build\lib.win32-2.7
+
+		copying PIL\ImageDraw2.py -> build\lib.win32-2.7
+
+		copying PIL\ImageEnhance.py -> build\lib.win32-2.7
+
+		copying PIL\ImageFile.py -> build\lib.win32-2.7
+
+		copying PIL\ImageFileIO.py -> build\lib.win32-2.7
+
+		copying PIL\ImageFilter.py -> build\lib.win32-2.7
+
+		copying PIL\ImageFont.py -> build\lib.win32-2.7
+
+		copying PIL\ImageGL.py -> build\lib.win32-2.7
+
+		copying PIL\ImageGrab.py -> build\lib.win32-2.7
+
+		copying PIL\ImageMath.py -> build\lib.win32-2.7
+
+		copying PIL\ImageMode.py -> build\lib.win32-2.7
+
+		copying PIL\ImageOps.py -> build\lib.win32-2.7
+
+		copying PIL\ImagePalette.py -> build\lib.win32-2.7
+
+		copying PIL\ImagePath.py -> build\lib.win32-2.7
+
+		copying PIL\ImageQt.py -> build\lib.win32-2.7
+
+		copying PIL\ImageSequence.py -> build\lib.win32-2.7
+
+		copying PIL\ImageShow.py -> build\lib.win32-2.7
+
+		copying PIL\ImageStat.py -> build\lib.win32-2.7
+
+		copying PIL\ImageTk.py -> build\lib.win32-2.7
+
+		copying PIL\ImageTransform.py -> build\lib.win32-2.7
+
+		copying PIL\ImageWin.py -> build\lib.win32-2.7
+
+		copying PIL\ImImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\ImtImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\IptcImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\JpegImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\McIdasImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\MicImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\MpegImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\MspImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\OleFileIO.py -> build\lib.win32-2.7
+
+		copying PIL\PaletteFile.py -> build\lib.win32-2.7
+
+		copying PIL\PalmImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\PcdImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\PcfFontFile.py -> build\lib.win32-2.7
+
+		copying PIL\PcxImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\PdfImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\PixarImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\PngImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\PpmImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\PsdImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\PSDraw.py -> build\lib.win32-2.7
+
+		copying PIL\SgiImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\SpiderImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\SunImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\TarIO.py -> build\lib.win32-2.7
+
+		copying PIL\TgaImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\TiffImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\TiffTags.py -> build\lib.win32-2.7
+
+		copying PIL\WalImageFile.py -> build\lib.win32-2.7
+
+		copying PIL\WmfImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\XbmImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\XpmImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\XVThumbImagePlugin.py -> build\lib.win32-2.7
+
+		copying PIL\__init__.py -> build\lib.win32-2.7
+
+		running build_ext
+
+		building '_imaging' extension
+
+		creating build\temp.win32-2.7
+
+		creating build\temp.win32-2.7\Release
+
+		creating build\temp.win32-2.7\Release\libimaging
+
+		C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\ven
+		v\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\ven
+		v\PC" -c _imaging.c -o build\temp.win32-2.7\Release\_imaging.o
+
+		C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\ven
+		v\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\ven
+		v\PC" -c decode.c -o build\temp.win32-2.7\Release\decode.o
+
+		C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\ven
+		v\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\ven
+		v\PC" -c encode.c -o build\temp.win32-2.7\Release\encode.o
+
+		C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\ven
+		v\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\ven
+		v\PC" -c map.c -o build\temp.win32-2.7\Release\map.o
+
+		In file included from c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/winnt.h:192:0,
+
+						 from c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/windef.h:253,
+
+						 from c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/windows.h:48,
+
+						 from map.c:35:
+
+		c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:50:21: error: duplicate 'signed'
+
+
+		c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:50:21: error: two or more data t
+		ypes in declaration specifiers
+
+		c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:51:22: error: duplicate 'short'
+
+		c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:56:23: error: duplicate 'unsigne
+		d'
+
+		c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:56:23: error: two or more data t
+		ypes in declaration specifiers
+
+		c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:57:24: error: duplicate 'unsigne
+		d'
+
+		c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/basetsd.h:57:24: error: duplicate 'short'
+
+		error: command 'cc' failed with exit status 1
+
+		----------------------------------------
+		Command "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\Scripts\python.exe" -c "i
+		mport setuptools;__file__='C:\\Users\\Initia7_B\\Documents\\HPU\\CSCI 3771\\csci3771finalProj\\venv\
+		\build\\pil\\setup.py';exec(compile(open(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))"
+		 install --single-version-externally-managed --record c:\users\initia~1\appdata\local\temp\pip-gifhl
+		a-record\install-record.txt --install-headers "C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771fi
+		nalProj\venv\include\site\python2.7" failed with error code 1 in C:\Users\Initia7_B\Documents\HPU\CS
+		CI 3771\csci3771finalProj\venv\build\pil
+		Storing complete log in C:\Users\Initia7_B\AppData\Roaming\pip\pip.log
+	Install Pillow instead (pip in venv)
+		Discover that PIL  has history of being a bad installer http://stackoverflow.com/questions/2485295/the-problem-with-installing-pil-using-virtualenv-or-buildout
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>pip install pillow
+		Downloading/unpacking pillow
+		  Downloading Pillow-1.7.7.zip (725Kb): 725Kb downloaded
+		  Running setup.py egg_info for package pillow
+
+			warning: no previously-included files found matching '.hgignore'
+			warning: no previously-included files found matching '.hgtags'
+			warning: no previously-included files found matching 'BUILDME.bat'
+			warning: no previously-included files found matching 'make-manifest.py'
+			warning: no previously-included files found matching 'SHIP'
+			warning: no previously-included files found matching 'SHIP.bat'
+			warning: no previously-included files matching '*' found under directory 'Tests'
+		Installing collected packages: pillow
+		  Running setup.py install for pillow
+			building '_imaging' extension
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c _imaging.c -o build\temp.win32-2.7\Release\_imaging.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c decode.c -o build\temp.win32-2.7\Release\decode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c encode.c -o build\temp.win32-2.7\Release\encode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c map.c -o build\temp.win32-2.7\Release\map.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c display.c -o build\temp.win32-2.7\Release\display.o
+			display.c: In function 'PyImaging_DrawWmf':
+			display.c:793:9: warning: passing argument 4 of 'CreateDIBSection' from incompatible pointer typ
+		e [enabled by default]
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/wingdi.h:2737:26: note: expected 'void
+		 **' but argument is of type 'char **'
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c outline.c -o build\temp.win32-2.7\Release\outline.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c path.c -o build\temp.win32-2.7\Release\path.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Access.c -o build\temp.win32-2.7\Release\libimaging\access.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Antialias.c -o build\temp.win32-2.7\Release\libimaging\antialias.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Bands.c -o build\temp.win32-2.7\Release\libimaging\bands.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\BitDecode.c -o build\temp.win32-2.7\Release\libimaging\bitdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Blend.c -o build\temp.win32-2.7\Release\libimaging\blend.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Chops.c -o build\temp.win32-2.7\Release\libimaging\chops.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Convert.c -o build\temp.win32-2.7\Release\libimaging\convert.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\ConvertYCbCr.c -o build\temp.win32-2.7\Release\libimaging\convertycbcr.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Copy.c -o build\temp.win32-2.7\Release\libimaging\copy.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Crc32.c -o build\temp.win32-2.7\Release\libimaging\crc32.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Crop.c -o build\temp.win32-2.7\Release\libimaging\crop.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Dib.c -o build\temp.win32-2.7\Release\libimaging\dib.o
+			libImaging\Dib.c: In function 'ImagingNewDIB':
+			libImaging\Dib.c:100:36: warning: passing argument 4 of 'CreateDIBSection' from incompatible poi
+		nter type [enabled by default]
+			c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include/wingdi.h:2737:26: note: expected 'void
+		 **' but argument is of type 'UINT8 **'
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Draw.c -o build\temp.win32-2.7\Release\libimaging\draw.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Effects.c -o build\temp.win32-2.7\Release\libimaging\effects.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\EpsEncode.c -o build\temp.win32-2.7\Release\libimaging\epsencode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\File.c -o build\temp.win32-2.7\Release\libimaging\file.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Fill.c -o build\temp.win32-2.7\Release\libimaging\fill.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Filter.c -o build\temp.win32-2.7\Release\libimaging\filter.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\FliDecode.c -o build\temp.win32-2.7\Release\libimaging\flidecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Geometry.c -o build\temp.win32-2.7\Release\libimaging\geometry.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\GetBBox.c -o build\temp.win32-2.7\Release\libimaging\getbbox.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\GifDecode.c -o build\temp.win32-2.7\Release\libimaging\gifdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\GifEncode.c -o build\temp.win32-2.7\Release\libimaging\gifencode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\HexDecode.c -o build\temp.win32-2.7\Release\libimaging\hexdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Histo.c -o build\temp.win32-2.7\Release\libimaging\histo.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\JpegDecode.c -o build\temp.win32-2.7\Release\libimaging\jpegdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\JpegEncode.c -o build\temp.win32-2.7\Release\libimaging\jpegencode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\LzwDecode.c -o build\temp.win32-2.7\Release\libimaging\lzwdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Matrix.c -o build\temp.win32-2.7\Release\libimaging\matrix.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\ModeFilter.c -o build\temp.win32-2.7\Release\libimaging\modefilter.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\MspDecode.c -o build\temp.win32-2.7\Release\libimaging\mspdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Negative.c -o build\temp.win32-2.7\Release\libimaging\negative.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Offset.c -o build\temp.win32-2.7\Release\libimaging\offset.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Pack.c -o build\temp.win32-2.7\Release\libimaging\pack.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\PackDecode.c -o build\temp.win32-2.7\Release\libimaging\packdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Palette.c -o build\temp.win32-2.7\Release\libimaging\palette.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Paste.c -o build\temp.win32-2.7\Release\libimaging\paste.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Quant.c -o build\temp.win32-2.7\Release\libimaging\quant.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\QuantHash.c -o build\temp.win32-2.7\Release\libimaging\quanthash.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\QuantHeap.c -o build\temp.win32-2.7\Release\libimaging\quantheap.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\PcdDecode.c -o build\temp.win32-2.7\Release\libimaging\pcddecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\PcxDecode.c -o build\temp.win32-2.7\Release\libimaging\pcxdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\PcxEncode.c -o build\temp.win32-2.7\Release\libimaging\pcxencode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Point.c -o build\temp.win32-2.7\Release\libimaging\point.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\RankFilter.c -o build\temp.win32-2.7\Release\libimaging\rankfilter.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\RawDecode.c -o build\temp.win32-2.7\Release\libimaging\rawdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\RawEncode.c -o build\temp.win32-2.7\Release\libimaging\rawencode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Storage.c -o build\temp.win32-2.7\Release\libimaging\storage.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\SunRleDecode.c -o build\temp.win32-2.7\Release\libimaging\sunrledecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\TgaRleDecode.c -o build\temp.win32-2.7\Release\libimaging\tgarledecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\Unpack.c -o build\temp.win32-2.7\Release\libimaging\unpack.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\UnpackYCC.c -o build\temp.win32-2.7\Release\libimaging\unpackycc.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\UnsharpMask.c -o build\temp.win32-2.7\Release\libimaging\unsharpmask.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\XbmDecode.c -o build\temp.win32-2.7\Release\libimaging\xbmdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\XbmEncode.c -o build\temp.win32-2.7\Release\libimaging\xbmencode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\ZipDecode.c -o build\temp.win32-2.7\Release\libimaging\zipdecode.o
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c libImaging\ZipEncode.c -o build\temp.win32-2.7\Release\libimaging\zipencode.o
+			C:\MinGW\bin\cc.exe -shared -s build\temp.win32-2.7\Release\_imaging.o build\temp.win32-2.7\Rele
+		ase\decode.o build\temp.win32-2.7\Release\encode.o build\temp.win32-2.7\Release\map.o build\temp.win
+		32-2.7\Release\display.o build\temp.win32-2.7\Release\outline.o build\temp.win32-2.7\Release\path.o
+		build\temp.win32-2.7\Release\libimaging\access.o build\temp.win32-2.7\Release\libimaging\antialias.o
+		 build\temp.win32-2.7\Release\libimaging\bands.o build\temp.win32-2.7\Release\libimaging\bitdecode.o
+		 build\temp.win32-2.7\Release\libimaging\blend.o build\temp.win32-2.7\Release\libimaging\chops.o bui
+		ld\temp.win32-2.7\Release\libimaging\convert.o build\temp.win32-2.7\Release\libimaging\convertycbcr.
+		o build\temp.win32-2.7\Release\libimaging\copy.o build\temp.win32-2.7\Release\libimaging\crc32.o bui
+		ld\temp.win32-2.7\Release\libimaging\crop.o build\temp.win32-2.7\Release\libimaging\dib.o build\temp
+		.win32-2.7\Release\libimaging\draw.o build\temp.win32-2.7\Release\libimaging\effects.o build\temp.wi
+		n32-2.7\Release\libimaging\epsencode.o build\temp.win32-2.7\Release\libimaging\file.o build\temp.win
+		32-2.7\Release\libimaging\fill.o build\temp.win32-2.7\Release\libimaging\filter.o build\temp.win32-2
+		.7\Release\libimaging\flidecode.o build\temp.win32-2.7\Release\libimaging\geometry.o build\temp.win3
+		2-2.7\Release\libimaging\getbbox.o build\temp.win32-2.7\Release\libimaging\gifdecode.o build\temp.wi
+		n32-2.7\Release\libimaging\gifencode.o build\temp.win32-2.7\Release\libimaging\hexdecode.o build\tem
+		p.win32-2.7\Release\libimaging\histo.o build\temp.win32-2.7\Release\libimaging\jpegdecode.o build\te
+		mp.win32-2.7\Release\libimaging\jpegencode.o build\temp.win32-2.7\Release\libimaging\lzwdecode.o bui
+		ld\temp.win32-2.7\Release\libimaging\matrix.o build\temp.win32-2.7\Release\libimaging\modefilter.o b
+		uild\temp.win32-2.7\Release\libimaging\mspdecode.o build\temp.win32-2.7\Release\libimaging\negative.
+		o build\temp.win32-2.7\Release\libimaging\offset.o build\temp.win32-2.7\Release\libimaging\pack.o bu
+		ild\temp.win32-2.7\Release\libimaging\packdecode.o build\temp.win32-2.7\Release\libimaging\palette.o
+		 build\temp.win32-2.7\Release\libimaging\paste.o build\temp.win32-2.7\Release\libimaging\quant.o bui
+		ld\temp.win32-2.7\Release\libimaging\quanthash.o build\temp.win32-2.7\Release\libimaging\quantheap.o
+		 build\temp.win32-2.7\Release\libimaging\pcddecode.o build\temp.win32-2.7\Release\libimaging\pcxdeco
+		de.o build\temp.win32-2.7\Release\libimaging\pcxencode.o build\temp.win32-2.7\Release\libimaging\poi
+		nt.o build\temp.win32-2.7\Release\libimaging\rankfilter.o build\temp.win32-2.7\Release\libimaging\ra
+		wdecode.o build\temp.win32-2.7\Release\libimaging\rawencode.o build\temp.win32-2.7\Release\libimagin
+		g\storage.o build\temp.win32-2.7\Release\libimaging\sunrledecode.o build\temp.win32-2.7\Release\libi
+		maging\tgarledecode.o build\temp.win32-2.7\Release\libimaging\unpack.o build\temp.win32-2.7\Release\
+		libimaging\unpackycc.o build\temp.win32-2.7\Release\libimaging\unsharpmask.o build\temp.win32-2.7\Re
+		lease\libimaging\xbmdecode.o build\temp.win32-2.7\Release\libimaging\xbmencode.o build\temp.win32-2.
+		7\Release\libimaging\zipdecode.o build\temp.win32-2.7\Release\libimaging\zipencode.o build\temp.win3
+		2-2.7\Release\_imaging.def "-LC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib"
+		 -LC:\Python27\Libs "-LC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\libs" "-LC:
+		\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PCbuild" -lkernel32 -luser32 -lgdi32
+		 -lpython27 -lmsvcr90 -o build\lib.win32-2.7\_imaging.pyd
+			building '_imagingmath' extension
+			C:\MinGW\bin\cc.exe -IlibImaging "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\include" -IC:\Python27\include "-IC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+		\venv\PC" -c _imagingmath.c -o build\temp.win32-2.7\Release\_imagingmath.o
+			C:\MinGW\bin\cc.exe -shared -s build\temp.win32-2.7\Release\_imagingmath.o build\temp.win32-2.7\
+		Release\_imagingmath.def "-LC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\lib" -
+		LC:\Python27\Libs "-LC:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\libs" "-LC:\U
+		sers\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj\venv\PCbuild" -lpython27 -lmsvcr90 -o build
+		\lib.win32-2.7\_imagingmath.pyd
+			--------------------------------------------------------------------
+			SETUP SUMMARY (Pillow 1.7.7 / PIL 1.1.7)
+			--------------------------------------------------------------------
+			version       1.7.7
+			platform      win32 2.7.3 (default, Apr 10 2012, 23:31:26)
+						  [MSC v.1500 32 bit (Intel)]
+			--------------------------------------------------------------------
+			*** TKINTER support not available (Tcl/Tk 8.5 libraries needed)
+			*** JPEG support not available
+			*** ZLIB (PNG/ZIP) support not available
+			*** FREETYPE2 support not available
+			*** LITTLECMS support not available
+			--------------------------------------------------------------------
+			To add a missing option, make sure you have the required
+			library, and set the corresponding ROOT variable in the
+			setup.py script.
+
+			To check the build, run the selftest.py script.
+
+			warning: no previously-included files found matching '.hgignore'
+			warning: no previously-included files found matching '.hgtags'
+			warning: no previously-included files found matching 'BUILDME.bat'
+			warning: no previously-included files found matching 'make-manifest.py'
+			warning: no previously-included files found matching 'SHIP'
+			warning: no previously-included files found matching 'SHIP.bat'
+			warning: no previously-included files matching '*' found under directory 'Tests'
+		Successfully installed pillow
+		Cleaning up...
+	Try again Syncing the database with Django
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncdb
+		Creating tables ...
+		Creating table tagging_tag
+		Creating table tagging_taggeditem
+		Creating table zinnia_category
+		Creating table zinnia_entry_categories
+		Creating table zinnia_entry_related
+		Creating table zinnia_entry_authors
+		Creating table zinnia_entry_sites
+		Creating table zinnia_entry
+		Installing custom SQL ...
+		Installing indexes ...
+		Installed 0 object(s) from 0 fixture(s)
+	Activate the Django admin site 
+		Edit settings.py: uncomment 'contrib.admin', in INSTALLED_APPS
+		Uncomment three lines in urls.py
+			from django.contrib import admin
+			admin.autodiscover()
+			url(r'^admin/', include(admin.site.urls)),
+	Syncdb the database with Django
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncdb
+		Creating tables ...
+		Creating table django_admin_log
+		Installing custom SQL ...
+		Installing indexes ...
+		Installed 0 object(s) from 0 fixture(s)
+	Add entries to urls.py for zinnia
+		url(r'^weblog/', include('zinnia.urls')),
+		url(r'^comments/', include('django.contrib.comments.urls')),
+		http://locahost:8000 = Site matching query does not exist.
+	Commit Installed PIL and successful syncdb
+	
 Testing
 	Test that the Django app runs in the local venv
 		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py runserver
@@ -517,3 +1136,15 @@ Testing
 		*http://localhost:8000/ = It worked! Congratulations on your first Django-powered page.
 	Verify that the first push gets to github
 	Verify the Twitter service hook pass through to bryan.wolfford.com
+	Verify that the admin site is running 
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py runserver
+		Validating models...
+		0 errors found
+		Django version 1.4, using settings 'bryanBlog.settings'
+		Development server is running at http://127.0.0.1:8000/
+		Quit the server with CTRL-BREAK.
+		[02/May/2012 10:40:21] "GET /admin/ HTTP/1.1" 500 162224
+	Admin isn't running
+		Continue, see if we can't get zinnia running instead
+	
+		
