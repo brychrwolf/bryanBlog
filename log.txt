@@ -1,0 +1,72 @@
+Prototype
+	Create a new repo on in github name "bryanBlog"
+	Add the Twitter service hook to the repo
+	Discover what django blog tools there are for me to use
+	Decide on the blog tool: zinnia
+	Download django-blog-zinnia
+	Locate the zinnia documentation
+	Create a new Django/Heroku project directory '/csci3771finalProj'
+	Create new Log file 'log.txt'
+	Install a Virtualenv venv in the project folder
+		C:\Users\Initia7_B>cd C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj
+
+		C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>virtualenv venv --distribute
+		New python executable in venv\Scripts\python.exe
+		Installing distribute...............................................................................
+		....................................................................................................
+		............done.
+		Installing pip.................done.
+	Install Django into the venv
+		C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>venv\Scripts\activate.bat
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>pip install Django
+		Downloading/unpacking Django
+		  Downloading Django-1.4.tar.gz (7.6Mb): 7.6Mb downloaded
+		  Running setup.py egg_info for package Django
+		Installing collected packages: Django
+		  Running setup.py install for Django
+		Successfully installed Django
+		Cleaning up...
+	Create the Django app (not forgetting the .)
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>venv\Scripts\django-admin.py sta
+		rtproject bryanBlog .
+	Initialize the project with git
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git init
+		Initialized empty Git repository in C:/Users/Initia7_B/Documents/HPU/CSCI 3771/csci3771finalProj/.gi
+		t/
+	Create the .gitignore file with venv and *.pyc
+	Make the first stage/commit
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git add .
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git commit -m "initial commit"
+		[master (root-commit) 60f7c2e] initial commit
+		 5 files changed, 211 insertions(+)
+		 create mode 100644 .gitignore
+		 create mode 100644 bryanBlog/__init__.py
+		 create mode 100644 bryanBlog/settings.py
+		 create mode 100644 bryanBlog/urls.py
+		 create mode 100644 bryanBlog/wsgi.py
+		 create mode 100644 log.txt
+		 create mode 100644 manage.py
+	Create 'origin' remote to github
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git remote add origin git@github
+		.com:brychrwol/bryanBlog.git
+	Push the first commit to github
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git push -u origin master
+		Enter passphrase for key '/c/Users/Initia7_B/.ssh/id_rsa':
+		Counting objects: 9, done.
+		Delta compression using up to 4 threads.
+		Compressing objects: 100% (7/7), done.
+		Writing objects: 100% (9/9), 3.52 KiB, done.
+		Total 9 (delta 0), reused 0 (delta 0)
+		To git@github.com:brychrwol/bryanBlog.git
+		 * [new branch]      master -> master
+		Branch master set up to track remote branch master from origin.
+Testing
+	Test that the Django app runs in the local venv
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py runserver
+		Validating models...
+		0 errors found
+		Django version 1.4, using settings 'bryanBlog.settings'
+		Development server is running at http://127.0.0.1:8000/
+		Quit the server with CTRL-BREAK.
+		*http://localhost:8000/ = It worked! Congratulations on your first Django-powered page.
+	Test that the push gets to github
