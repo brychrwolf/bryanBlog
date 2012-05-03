@@ -142,9 +142,6 @@ Prototype
 			'PASSWORD': 'bryanBlog_admin',                 # Not used with sqlite3.
 			'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
 			'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-		Edit settings.py: Edit TEMPLATE_DIRS for venv and heroku 
-			'/app/polls/templates',
-			'C:/Users/Initia7_B/Documents/HPU/CSCI 3771/pollsOnHeroku/polls/templates',
 		Add TEMPLATE_CONTEXT_PROCESSORS for zennia
 			  'django.core.context_processors.auth',
 			  'django.core.context_processors.i18n',
@@ -1705,7 +1702,42 @@ Prototype
 			Installed 0 object(s) from 0 fixture(s)
 			urls.py already has (r'^comments/', include('django.contrib.comments.urls')), from line 1126
 		http://127.0.0.1:8000/admin/zinnia/ = Zinnia administration
+	Commit successful zinnia responses
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git add .
 
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git commit -m "successful django
+		-blog-zinnia /weblog responses"
+		[master 55d58b6] successful django-blog-zinnia /weblog responses
+		 2 files changed, 492 insertions(+), 5 deletions(-)
+
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git push origin master
+		Enter passphrase for key '/c/Users/Initia7_B/.ssh/id_rsa':
+		Counting objects: 9, done.
+		Delta compression using up to 4 threads.
+		Compressing objects: 100% (5/5), done.
+		Writing objects: 100% (5/5), 3.59 KiB, done.
+		Total 5 (delta 3), reused 0 (delta 0)
+		To git@github.com:brychrwol/bryanBlog.git
+		   5ea284a..55d58b6  master -> master
+	Edit URLs to make weblog the home
+		#url(r'^$', 'bryanBlog.views.home', name='home'),
+		url(r'^$', include('zinnia.urls')),
+	
+Implement
+	Create a pip requirements file
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>pip freeze > requirements.txt
+		BeautifulSoup==3.2.1
+		Django==1.4
+		Pillow==1.7.7
+		distribute==0.6.24
+		django-blog-zinnia==0.10.1
+		django-mptt==0.5.2
+		django-tagging==0.3.1
+		django-xmlrpc==0.1.4
+		psycopg2==2.4.5
+		pyparsing==1.5.6
+	Commit to Git pre-Heroku Deployment
+	
 Testing
 	Test that the Django app runs in the local venv
 		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py runserver
@@ -1842,3 +1874,5 @@ Testing
 		http://127.0.0.1:8000/admin/zinnia/ = relation "django_comments" does not exist
 		Start Troubleshoot line 1689,
 		End troubleshoot line 1707
+	Verify that /weblog is working
+		http://127.0.0.1:8000/weblog/ 

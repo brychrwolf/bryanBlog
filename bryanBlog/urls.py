@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'bryanBlog.views.home', name='home'),
+    #url(r'^$', 'bryanBlog.views.home', name='home'),
+    url(r'^$', include('zinnia.urls')),
     # url(r'^bryanBlog/', include('bryanBlog.foo.urls')),
 	url(r'^weblog/', include('zinnia.urls')),
 	url(r'^comments/', include('django.contrib.comments.urls')),
