@@ -1222,7 +1222,490 @@ Prototype
 		  #'django.core.context_processors.auth',
 		  'django.contrib.auth.context_processors.auth',
 		http://127.0.0.1:8000/admin/ = Django administration login!
-			
+	Commit successful admin and home calls responses
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git add .
+		warning: LF will be replaced by CRLF in bryanBlog/templates/404.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/500.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/app_index.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/autocomplete_tags.js.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/markitup.js.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/preview.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/tinymce_textareas.js.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/wymeditor.js.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/_content_stats.html
+		.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/_draft_entries.html
+		.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/_recent_comments.ht
+		ml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/_recent_linkbacks.h
+		tml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/base.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/content_stats.html.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/draft_entries.html.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/quickpost.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/recent_comments.htm
+		l.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/recent_linkbacks.ht
+		ml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/comment_authors_email.txt.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/comment_notification_email.txt.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/comment_reply_email.txt.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/zinnia/entry/form.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/zinnia/entry/posted.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/zinnia_entry_preview.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/comment_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/comment_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/discussion_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/discussion_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/entry_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/entry_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/pingback_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/pingback_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/trackback_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/trackback_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/_entry_detail.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/author/entry_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/author_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/base.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/category/entry_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/category_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_day.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_month.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_today.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_week.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_year.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_detail.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_search.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_trackback.xml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/humans.txt.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/login.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/opensearch.xml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/password.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/rsd.xml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/sitemap.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/skeleton.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tag/entry_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tag_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/archives_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/archives_entries_link.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/archives_entries_tree.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/authors.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/breadcrumbs.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/calendar.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/categories.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/draft_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/dummy.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/featured_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/pagination.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/popular_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/random_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/recent_comments.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/recent_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/recent_linkbacks.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/search_form.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/similar_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/slider_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/statistics.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/tag_cloud.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/wlwmanifest.xml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/wxr.xml.
+		The file will have its original line endings in your working directory.
+
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git commit -m "successful home a
+		nd admin responses"
+		[master 5ea284a] successful home and admin responses
+		warning: LF will be replaced by CRLF in bryanBlog/templates/404.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/500.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/app_index.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/autocomplete_tags.js.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/markitup.js.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/preview.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/tinymce_textareas.js.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/entry/wymeditor.js.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/_content_stats.html
+		.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/_draft_entries.html
+		.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/_recent_comments.ht
+		ml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/_recent_linkbacks.h
+		tml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/base.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/content_stats.html.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/draft_entries.html.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/quickpost.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/recent_comments.htm
+		l.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/admin/zinnia/widgets/recent_linkbacks.ht
+		ml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/comment_authors_email.txt.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/comment_notification_email.txt.
+
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/comment_reply_email.txt.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/zinnia/entry/form.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/zinnia/entry/posted.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/comments/zinnia_entry_preview.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/comment_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/comment_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/discussion_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/discussion_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/entry_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/entry_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/pingback_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/pingback_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/trackback_description.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/feeds/trackback_title.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/_entry_detail.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/author/entry_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/author_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/base.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/category/entry_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/category_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_day.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_month.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_today.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_week.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_archive_year.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_detail.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_search.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/entry_trackback.xml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/humans.txt.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/login.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/opensearch.xml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/password.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/rsd.xml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/sitemap.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/skeleton.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tag/entry_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tag_list.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/archives_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/archives_entries_link.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/archives_entries_tree.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/authors.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/breadcrumbs.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/calendar.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/categories.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/draft_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/dummy.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/featured_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/pagination.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/popular_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/random_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/recent_comments.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/recent_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/recent_linkbacks.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/search_form.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/similar_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/slider_entries.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/statistics.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/tags/tag_cloud.html.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/wlwmanifest.xml.
+		The file will have its original line endings in your working directory.
+		warning: LF will be replaced by CRLF in bryanBlog/templates/zinnia/wxr.xml.
+		The file will have its original line endings in your working directory.
+		 86 files changed, 3633 insertions(+), 1156 deletions(-)
+		 create mode 100644 bryanBlog/models.py
+		 create mode 100644 bryanBlog/templates/404.html
+		 create mode 100644 bryanBlog/templates/500.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/app_index.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/entry/autocomplete_tags.js
+		 create mode 100644 bryanBlog/templates/admin/zinnia/entry/markitup.js
+		 create mode 100644 bryanBlog/templates/admin/zinnia/entry/preview.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/entry/tinymce_textareas.js
+		 create mode 100644 bryanBlog/templates/admin/zinnia/entry/wymeditor.js
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/_content_stats.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/_draft_entries.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/_recent_comments.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/_recent_linkbacks.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/base.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/content_stats.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/draft_entries.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/quickpost.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/recent_comments.html
+		 create mode 100644 bryanBlog/templates/admin/zinnia/widgets/recent_linkbacks.html
+		 create mode 100644 bryanBlog/templates/comments/comment_authors_email.txt
+		 create mode 100644 bryanBlog/templates/comments/comment_notification_email.txt
+		 create mode 100644 bryanBlog/templates/comments/comment_reply_email.txt
+		 create mode 100644 bryanBlog/templates/comments/zinnia/entry/form.html
+		 create mode 100644 bryanBlog/templates/comments/zinnia/entry/posted.html
+		 create mode 100644 bryanBlog/templates/comments/zinnia_entry_preview.html
+		 create mode 100644 bryanBlog/templates/feeds/comment_description.html
+		 create mode 100644 bryanBlog/templates/feeds/comment_title.html
+		 create mode 100644 bryanBlog/templates/feeds/discussion_description.html
+		 create mode 100644 bryanBlog/templates/feeds/discussion_title.html
+		 create mode 100644 bryanBlog/templates/feeds/entry_description.html
+		 create mode 100644 bryanBlog/templates/feeds/entry_title.html
+		 create mode 100644 bryanBlog/templates/feeds/pingback_description.html
+		 create mode 100644 bryanBlog/templates/feeds/pingback_title.html
+		 create mode 100644 bryanBlog/templates/feeds/trackback_description.html
+		 create mode 100644 bryanBlog/templates/feeds/trackback_title.html
+		 create mode 100644 bryanBlog/templates/zinnia/_entry_detail.html
+		 create mode 100644 bryanBlog/templates/zinnia/author/entry_list.html
+		 create mode 100644 bryanBlog/templates/zinnia/author_list.html
+		 create mode 100644 bryanBlog/templates/zinnia/base.html
+		 create mode 100644 bryanBlog/templates/zinnia/category/entry_list.html
+		 create mode 100644 bryanBlog/templates/zinnia/category_list.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_archive.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_archive_day.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_archive_month.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_archive_today.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_archive_week.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_archive_year.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_detail.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_list.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_search.html
+		 create mode 100644 bryanBlog/templates/zinnia/entry_trackback.xml
+		 create mode 100644 bryanBlog/templates/zinnia/humans.txt
+		 create mode 100644 bryanBlog/templates/zinnia/login.html
+		 create mode 100644 bryanBlog/templates/zinnia/opensearch.xml
+		 create mode 100644 bryanBlog/templates/zinnia/password.html
+		 create mode 100644 bryanBlog/templates/zinnia/rsd.xml
+		 create mode 100644 bryanBlog/templates/zinnia/sitemap.html
+		 create mode 100644 bryanBlog/templates/zinnia/skeleton.html
+		 create mode 100644 bryanBlog/templates/zinnia/tag/entry_list.html
+		 create mode 100644 bryanBlog/templates/zinnia/tag_list.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/archives_entries.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/archives_entries_link.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/archives_entries_tree.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/authors.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/breadcrumbs.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/calendar.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/categories.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/draft_entries.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/dummy.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/featured_entries.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/pagination.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/popular_entries.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/random_entries.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/recent_comments.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/recent_entries.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/recent_linkbacks.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/search_form.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/similar_entries.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/slider_entries.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/statistics.html
+		 create mode 100644 bryanBlog/templates/zinnia/tags/tag_cloud.html
+		 create mode 100644 bryanBlog/templates/zinnia/wlwmanifest.xml
+		 create mode 100644 bryanBlog/templates/zinnia/wxr.xml
+		 create mode 100644 bryanBlog/views.py
+		 rewrite log.txt (85%)
+
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git push origin master
+		Enter passphrase for key '/c/Users/Initia7_B/.ssh/id_rsa':
+		Counting objects: 99, done.
+		Delta compression using up to 4 threads.
+		Compressing objects: 100% (84/84), done.
+		Writing objects: 100% (94/94), 35.26 KiB, done.
+		Total 94 (delta 19), reused 0 (delta 0)
+		To git@github.com:brychrwol/bryanBlog.git
+		   9fb3c38..5ea284a  master -> master
+	Troublshoot password hashing algorithm error
+		read http://stackoverflow.com/questions/10246463/password-hashers-setting-in-django
+		https://docs.djangoproject.com/en/1.3/topics/auth/#changing-passwords
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py shell
+		Python 2.7.3 (default, Apr 10 2012, 23:31:26) [MSC v.1500 32 bit (Intel)] on win32
+		Type "help", "copyright", "credits" or "license" for more information.
+		(InteractiveConsole)
+		>>> from django.contrib.auth.models import User
+		>>> u = User.objects.get(username__exact='user')
+		>>> u.set_password('NEWPASSWORD')
+		>>> u.save()
+		>>> exit()
+	Troubleshoot relation "django_comments" does not exist
+		try syncing the database
+			(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncd
+			Creating tables ...
+			Installing custom SQL ...
+			Installing indexes ...
+			Installed 0 object(s) from 0 fixture(s)
+			http://127.0.0.1:8000/admin/zinnia/ = relation "django_comments" does not exist (same error)
+		read http://django-blog-zinnia.com/documentation/notes/faq/#comments
+		read http://readthedocs.org/docs/django/en/latest/ref/contrib/comments/index.html#django.contrib.comments
+			(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py syncdb
+			Creating tables ...
+			Creating table django_comments
+			Creating table django_comment_flags
+			Installing custom SQL ...
+			Installing indexes ...
+			Installed 0 object(s) from 0 fixture(s)
+			urls.py already has (r'^comments/', include('django.contrib.comments.urls')), from line 1126
+		http://127.0.0.1:8000/admin/zinnia/ = Zinnia administration
+
 Testing
 	Test that the Django app runs in the local venv
 		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>python manage.py runserver
@@ -1352,7 +1835,10 @@ Testing
 			CREATE INDEX "zinnia_entry_slug_like" ON "zinnia_entry" ("slug" varchar_pattern_ops);
 			COMMIT;
 	Verify that bryanBlog is a 'site' in the django_sites table
-		
-	
-		
-		
+	Verify that admin/zinnia/ is working
+		http://127.0.0.1:8000/admin/zinnia/ = password hashing algorithm error
+		Start Troubleshoot line 1677,
+		End troubleshoot line 1688
+		http://127.0.0.1:8000/admin/zinnia/ = relation "django_comments" does not exist
+		Start Troubleshoot line 1689,
+		End troubleshoot line 1707
