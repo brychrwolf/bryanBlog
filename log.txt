@@ -1737,6 +1737,694 @@ Implement
 		psycopg2==2.4.5
 		pyparsing==1.5.6
 	Commit to Git pre-Heroku Deployment
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git add .
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git commit -m "pre-Herkou deploy
+		ment"
+		[master 63c611f] pre-Herkou deployment
+		 3 files changed, 50 insertions(+), 5 deletions(-)
+		 create mode 100644 requirements.txt
+	Create an app on the Cedar stack:
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>heroku create --stack cedar
+		Creating warm-snow-8555... done, stack is cedar
+		http://warm-snow-8555.herokuapp.com/ | git@heroku.com:warm-snow-8555.git
+		Git remote heroku added
+	Edit the .git config to allow multi-pushing with origin
+		[remote "github"]
+			url = git@github.com:brychrwol/bryanBlog.git
+			fetch = +refs/heads/*:refs/remotes/origin/*
+		[branch "master"]
+			remote = origin
+			merge = refs/heads/master
+		[remote "heroku"]
+			url = git@heroku.com:warm-snow-8555.git
+			fetch = +refs/heads/*:refs/remotes/heroku/*
+		[remote "origin"]
+			url = git@github.com:brychrwol/bryanBlog.git
+			url = git@heroku.com:warm-snow-8555.git
+	Push to github and heroku
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>git push origin master
+		Enter passphrase for key '/c/Users/Initia7_B/.ssh/id_rsa':
+		Counting objects: 10, done.
+		Delta compression using up to 4 threads.
+		Compressing objects: 100% (6/6), done.
+		Writing objects: 100% (6/6), 1.18 KiB, done.
+		Total 6 (delta 3), reused 0 (delta 0)
+		To git@github.com:brychrwol/bryanBlog.git
+		   55d58b6..63c611f  master -> master
+		Enter passphrase for key '/c/Users/Initia7_B/.ssh/id_rsa':
+		Counting objects: 128, done.
+		Delta compression using up to 4 threads.
+		Compressing objects: 100% (116/116), done.
+		Writing objects: 100% (128/128), 52.35 KiB, done.
+		Total 128 (delta 32), reused 0 (delta 0)
+
+		-----> Heroku receiving push
+		-----> Python/Django app detected
+		-----> Preparing Python interpreter (2.7.2)
+		-----> Creating Virtualenv version 1.7
+			   New python executable in .heroku/venv/bin/python2.7
+			   Also creating executable in .heroku/venv/bin/python
+			   Installing distribute........................................................................
+		....................................................................................................
+		.................done.
+			   Installing pip...............done.
+			   Running virtualenv with interpreter /usr/local/bin/python2.7
+		-----> Activating virtualenv
+		-----> Installing dependencies using Pip version 1.0.2
+			   Downloading/unpacking BeautifulSoup==3.2.1 (from -r requirements.txt (line 1))
+			   Creating supposed download cache at /app/tmp/repo.git/.cache/pip_downloads
+				 Downloading BeautifulSoup-3.2.1.tar.gz
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2FB%2FBeautifulSoup%2FBeautifulSoup-3.2.1.tar.gz
+				 Running setup.py egg_info for package BeautifulSoup
+
+			   Downloading/unpacking Django==1.4 (from -r requirements.txt (line 2))
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2FD%2FDjango%2FDjango-1.4.tar.gz
+				 Running setup.py egg_info for package Django
+
+			   Downloading/unpacking Pillow==1.7.7 (from -r requirements.txt (line 3))
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2FP%2FPillow%2FPillow-1.7.7.zip
+				 Running setup.py egg_info for package Pillow
+
+				   warning: no previously-included files found matching '.hgignore'
+				   warning: no previously-included files found matching '.hgtags'
+				   warning: no previously-included files found matching 'BUILDME.bat'
+				   warning: no previously-included files found matching 'make-manifest.py'
+				   warning: no previously-included files found matching 'SHIP'
+				   warning: no previously-included files found matching 'SHIP.bat'
+				   warning: no previously-included files matching '*' found under directory 'Tests'
+			   Requirement already satisfied (use --upgrade to upgrade): distribute==0.6.24 in ./.heroku/ven
+		v/lib/python2.7/site-packages/distribute-0.6.24-py2.7.egg (from -r requirements.txt (line 4))
+			   Downloading/unpacking django-blog-zinnia==0.10.1 (from -r requirements.txt (line 5))
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2Fd%2Fdjango-blog-zinnia%2Fdjango-blog-zinnia-0.10.1.tar.gz
+				 Running setup.py egg_info for package django-blog-zinnia
+
+				   no previously-included directories found matching 'docs/build'
+				   no previously-included directories found matching 'docs/epydoc'
+				   no previously-included directories found matching 'docs/coverage'
+				   no previously-included directories found matching 'zinnia/static/zinnia/css/.sass-cache'
+			   Downloading/unpacking django-mptt==0.5.2 (from -r requirements.txt (line 6))
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2Fd%2Fdjango-mptt%2Fdjango-mptt-0.5.2.tar.gz
+				 Running setup.py egg_info for package django-mptt
+
+				   warning: no files found matching '*.json' under directory 'mptt'
+			   Downloading/unpacking django-tagging==0.3.1 (from -r requirements.txt (line 7))
+				 Downloading django-tagging-0.3.1.tar.gz
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2Fd%2Fdjango-tagging%2Fdjango-tagging-0.3.1.tar.gz
+				 Running setup.py egg_info for package django-tagging
+
+			   Downloading/unpacking django-xmlrpc==0.1.4 (from -r requirements.txt (line 8))
+				 Downloading django-xmlrpc-0.1.4.tar.gz
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2Fd%2Fdjango-xmlrpc%2Fdjango-xmlrpc-0.1.4.tar.gz
+				 Running setup.py egg_info for package django-xmlrpc
+
+			   Downloading/unpacking psycopg2==2.4.5 (from -r requirements.txt (line 9))
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2Fp%2Fpsycopg2%2Fpsycopg2-2.4.5.tar.gz
+				 Running setup.py egg_info for package psycopg2
+
+				   no previously-included directories found matching 'doc/src/_build'
+			   Downloading/unpacking pyparsing==1.5.6 (from -r requirements.txt (line 10))
+				 Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.pytho
+		n.org%2Fpackages%2Fsource%2Fp%2Fpyparsing%2Fpyparsing-1.5.6.zip
+				 Running setup.py egg_info for package pyparsing
+
+			   Installing collected packages: BeautifulSoup, Django, Pillow, django-blog-zinnia, django-mptt
+		, django-tagging, django-xmlrpc, psycopg2, pyparsing
+				 Running setup.py install for BeautifulSoup
+
+				 Running setup.py install for Django
+				   changing mode of build/scripts-2.7/django-admin.py from 600 to 755
+
+				   changing mode of /tmp/build_10aejn8rdtx9u/.heroku/venv/bin/django-admin.py to 755
+				 Running setup.py install for Pillow
+				   DEB_HOST_MULTIARCH is not a supported variable name at /usr/bin/dpkg-architecture line 21
+		4.
+				   building '_imaging' extension
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c _imaging.
+		c -o build/temp.linux-x86_64-2.7/_imaging.o
+				   _imaging.c:3017: warning: initialization from incompatible pointer type
+				   _imaging.c:3077: warning: initialization from incompatible pointer type
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c decode.c
+		-o build/temp.linux-x86_64-2.7/decode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c encode.c
+		-o build/temp.linux-x86_64-2.7/encode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c map.c -o
+		build/temp.linux-x86_64-2.7/map.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c display.c
+		 -o build/temp.linux-x86_64-2.7/display.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c outline.c
+		 -o build/temp.linux-x86_64-2.7/outline.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c path.c -o
+		 build/temp.linux-x86_64-2.7/path.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Access.c -o build/temp.linux-x86_64-2.7/libImaging/Access.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Antialias.c -o build/temp.linux-x86_64-2.7/libImaging/Antialias.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Bands.c -o build/temp.linux-x86_64-2.7/libImaging/Bands.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/BitDecode.c -o build/temp.linux-x86_64-2.7/libImaging/BitDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Blend.c -o build/temp.linux-x86_64-2.7/libImaging/Blend.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Chops.c -o build/temp.linux-x86_64-2.7/libImaging/Chops.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Convert.c -o build/temp.linux-x86_64-2.7/libImaging/Convert.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/ConvertYCbCr.c -o build/temp.linux-x86_64-2.7/libImaging/ConvertYCbCr.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Copy.c -o build/temp.linux-x86_64-2.7/libImaging/Copy.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Crc32.c -o build/temp.linux-x86_64-2.7/libImaging/Crc32.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Crop.c -o build/temp.linux-x86_64-2.7/libImaging/Crop.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Dib.c -o build/temp.linux-x86_64-2.7/libImaging/Dib.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Draw.c -o build/temp.linux-x86_64-2.7/libImaging/Draw.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Effects.c -o build/temp.linux-x86_64-2.7/libImaging/Effects.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/EpsEncode.c -o build/temp.linux-x86_64-2.7/libImaging/EpsEncode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/File.c -o build/temp.linux-x86_64-2.7/libImaging/File.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Fill.c -o build/temp.linux-x86_64-2.7/libImaging/Fill.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Filter.c -o build/temp.linux-x86_64-2.7/libImaging/Filter.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/FliDecode.c -o build/temp.linux-x86_64-2.7/libImaging/FliDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Geometry.c -o build/temp.linux-x86_64-2.7/libImaging/Geometry.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/GetBBox.c -o build/temp.linux-x86_64-2.7/libImaging/GetBBox.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/GifDecode.c -o build/temp.linux-x86_64-2.7/libImaging/GifDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/GifEncode.c -o build/temp.linux-x86_64-2.7/libImaging/GifEncode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/HexDecode.c -o build/temp.linux-x86_64-2.7/libImaging/HexDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Histo.c -o build/temp.linux-x86_64-2.7/libImaging/Histo.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/JpegDecode.c -o build/temp.linux-x86_64-2.7/libImaging/JpegDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/JpegEncode.c -o build/temp.linux-x86_64-2.7/libImaging/JpegEncode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/LzwDecode.c -o build/temp.linux-x86_64-2.7/libImaging/LzwDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Matrix.c -o build/temp.linux-x86_64-2.7/libImaging/Matrix.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/ModeFilter.c -o build/temp.linux-x86_64-2.7/libImaging/ModeFilter.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/MspDecode.c -o build/temp.linux-x86_64-2.7/libImaging/MspDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Negative.c -o build/temp.linux-x86_64-2.7/libImaging/Negative.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Offset.c -o build/temp.linux-x86_64-2.7/libImaging/Offset.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Pack.c -o build/temp.linux-x86_64-2.7/libImaging/Pack.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/PackDecode.c -o build/temp.linux-x86_64-2.7/libImaging/PackDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Palette.c -o build/temp.linux-x86_64-2.7/libImaging/Palette.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Paste.c -o build/temp.linux-x86_64-2.7/libImaging/Paste.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Quant.c -o build/temp.linux-x86_64-2.7/libImaging/Quant.o
+				   libImaging/Quant.c: In function 'rehash_collide':
+				   libImaging/Quant.c:154: warning: cast to pointer from integer of different size
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/QuantHash.c -o build/temp.linux-x86_64-2.7/libImaging/QuantHash.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/QuantHeap.c -o build/temp.linux-x86_64-2.7/libImaging/QuantHeap.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/PcdDecode.c -o build/temp.linux-x86_64-2.7/libImaging/PcdDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/PcxDecode.c -o build/temp.linux-x86_64-2.7/libImaging/PcxDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/PcxEncode.c -o build/temp.linux-x86_64-2.7/libImaging/PcxEncode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Point.c -o build/temp.linux-x86_64-2.7/libImaging/Point.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/RankFilter.c -o build/temp.linux-x86_64-2.7/libImaging/RankFilter.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/RawDecode.c -o build/temp.linux-x86_64-2.7/libImaging/RawDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/RawEncode.c -o build/temp.linux-x86_64-2.7/libImaging/RawEncode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Storage.c -o build/temp.linux-x86_64-2.7/libImaging/Storage.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/SunRleDecode.c -o build/temp.linux-x86_64-2.7/libImaging/SunRleDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/TgaRleDecode.c -o build/temp.linux-x86_64-2.7/libImaging/TgaRleDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/Unpack.c -o build/temp.linux-x86_64-2.7/libImaging/Unpack.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/UnpackYCC.c -o build/temp.linux-x86_64-2.7/libImaging/UnpackYCC.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/UnsharpMask.c -o build/temp.linux-x86_64-2.7/libImaging/UnsharpMask.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/XbmDecode.c -o build/temp.linux-x86_64-2.7/libImaging/XbmDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/XbmEncode.c -o build/temp.linux-x86_64-2.7/libImaging/XbmEncode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/ZipDecode.c -o build/temp.linux-x86_64-2.7/libImaging/ZipDecode.o
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DHAVE_LIBJPEG -DHAVE_LIBZ -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/
+		.heroku/venv/include -I/usr/local/include -I/usr/include -I/usr/local/include/python2.7 -c libImagin
+		g/ZipEncode.c -o build/temp.linux-x86_64-2.7/libImaging/ZipEncode.o
+				   gcc -pthread -shared build/temp.linux-x86_64-2.7/_imaging.o build/temp.linux-x86_64-2.7/d
+		ecode.o build/temp.linux-x86_64-2.7/encode.o build/temp.linux-x86_64-2.7/map.o build/temp.linux-x86_
+		64-2.7/display.o build/temp.linux-x86_64-2.7/outline.o build/temp.linux-x86_64-2.7/path.o build/temp
+		.linux-x86_64-2.7/libImaging/Access.o build/temp.linux-x86_64-2.7/libImaging/Antialias.o build/temp.
+		linux-x86_64-2.7/libImaging/Bands.o build/temp.linux-x86_64-2.7/libImaging/BitDecode.o build/temp.li
+		nux-x86_64-2.7/libImaging/Blend.o build/temp.linux-x86_64-2.7/libImaging/Chops.o build/temp.linux-x8
+		6_64-2.7/libImaging/Convert.o build/temp.linux-x86_64-2.7/libImaging/ConvertYCbCr.o build/temp.linux
+		-x86_64-2.7/libImaging/Copy.o build/temp.linux-x86_64-2.7/libImaging/Crc32.o build/temp.linux-x86_64
+		-2.7/libImaging/Crop.o build/temp.linux-x86_64-2.7/libImaging/Dib.o build/temp.linux-x86_64-2.7/libI
+		maging/Draw.o build/temp.linux-x86_64-2.7/libImaging/Effects.o build/temp.linux-x86_64-2.7/libImagin
+		g/EpsEncode.o build/temp.linux-x86_64-2.7/libImaging/File.o build/temp.linux-x86_64-2.7/libImaging/F
+		ill.o build/temp.linux-x86_64-2.7/libImaging/Filter.o build/temp.linux-x86_64-2.7/libImaging/FliDeco
+		de.o build/temp.linux-x86_64-2.7/libImaging/Geometry.o build/temp.linux-x86_64-2.7/libImaging/GetBBo
+		x.o build/temp.linux-x86_64-2.7/libImaging/GifDecode.o build/temp.linux-x86_64-2.7/libImaging/GifEnc
+		ode.o build/temp.linux-x86_64-2.7/libImaging/HexDecode.o build/temp.linux-x86_64-2.7/libImaging/Hist
+		o.o build/temp.linux-x86_64-2.7/libImaging/JpegDecode.o build/temp.linux-x86_64-2.7/libImaging/JpegE
+		ncode.o build/temp.linux-x86_64-2.7/libImaging/LzwDecode.o build/temp.linux-x86_64-2.7/libImaging/Ma
+		trix.o build/temp.linux-x86_64-2.7/libImaging/ModeFilter.o build/temp.linux-x86_64-2.7/libImaging/Ms
+		pDecode.o build/temp.linux-x86_64-2.7/libImaging/Negative.o build/temp.linux-x86_64-2.7/libImaging/O
+		ffset.o build/temp.linux-x86_64-2.7/libImaging/Pack.o build/temp.linux-x86_64-2.7/libImaging/PackDec
+		ode.o build/temp.linux-x86_64-2.7/libImaging/Palette.o build/temp.linux-x86_64-2.7/libImaging/Paste.
+		o build/temp.linux-x86_64-2.7/libImaging/Quant.o build/temp.linux-x86_64-2.7/libImaging/QuantHash.o
+		build/temp.linux-x86_64-2.7/libImaging/QuantHeap.o build/temp.linux-x86_64-2.7/libImaging/PcdDecode.
+		o build/temp.linux-x86_64-2.7/libImaging/PcxDecode.o build/temp.linux-x86_64-2.7/libImaging/PcxEncod
+		e.o build/temp.linux-x86_64-2.7/libImaging/Point.o build/temp.linux-x86_64-2.7/libImaging/RankFilter
+		.o build/temp.linux-x86_64-2.7/libImaging/RawDecode.o build/temp.linux-x86_64-2.7/libImaging/RawEnco
+		de.o build/temp.linux-x86_64-2.7/libImaging/Storage.o build/temp.linux-x86_64-2.7/libImaging/SunRleD
+		ecode.o build/temp.linux-x86_64-2.7/libImaging/TgaRleDecode.o build/temp.linux-x86_64-2.7/libImaging
+		/Unpack.o build/temp.linux-x86_64-2.7/libImaging/UnpackYCC.o build/temp.linux-x86_64-2.7/libImaging/
+		UnsharpMask.o build/temp.linux-x86_64-2.7/libImaging/XbmDecode.o build/temp.linux-x86_64-2.7/libImag
+		ing/XbmEncode.o build/temp.linux-x86_64-2.7/libImaging/ZipDecode.o build/temp.linux-x86_64-2.7/libIm
+		aging/ZipEncode.o -L/usr/local/lib -L/tmp/build_10aejn8rdtx9u/.heroku/venv/lib -L/usr/lib -ljpeg -lz
+		 -o build/lib.linux-x86_64-2.7/_imaging.so
+				   building '_imagingft' extension
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/.heroku/venv/include -I/usr
+		/local/include -I/usr/include -I/usr/local/include/python2.7 -c _imagingft.c -o build/temp.linux-x86
+		_64-2.7/_imagingft.o
+				   gcc -pthread -shared build/temp.linux-x86_64-2.7/_imagingft.o -L/usr/local/lib -L/tmp/bui
+		ld_10aejn8rdtx9u/.heroku/venv/lib -L/usr/lib -lfreetype -o build/lib.linux-x86_64-2.7/_imagingft.so
+				   building '_imagingcms' extension
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/.heroku/venv/include -I/usr
+		/local/include -I/usr/include -I/usr/local/include/python2.7 -c _imagingcms.c -o build/temp.linux-x8
+		6_64-2.7/_imagingcms.o
+				   gcc -pthread -shared build/temp.linux-x86_64-2.7/_imagingcms.o -L/usr/local/lib -L/tmp/bu
+		ild_10aejn8rdtx9u/.heroku/venv/lib -L/usr/lib -llcms -o build/lib.linux-x86_64-2.7/_imagingcms.so
+				   building '_imagingmath' extension
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -I/usr/include/freetype2 -IlibImaging -I/tmp/build_10aejn8rdtx9u/.heroku/venv/include -I/usr
+		/local/include -I/usr/include -I/usr/local/include/python2.7 -c _imagingmath.c -o build/temp.linux-x
+		86_64-2.7/_imagingmath.o
+				   gcc -pthread -shared build/temp.linux-x86_64-2.7/_imagingmath.o -L/usr/local/lib -L/tmp/b
+		uild_10aejn8rdtx9u/.heroku/venv/lib -L/usr/lib -o build/lib.linux-x86_64-2.7/_imagingmath.so
+				   --------------------------------------------------------------------
+				   SETUP SUMMARY (Pillow 1.7.7 / PIL 1.1.7)
+				   --------------------------------------------------------------------
+				   version       1.7.7
+				   platform      linux2 2.7.2 (default, Oct 31 2011, 16:22:04)
+								 [GCC 4.4.3]
+				   --------------------------------------------------------------------
+				   *** TKINTER support not available
+				   --- JPEG support available
+				   --- ZLIB (PNG/ZIP) support available
+				   --- FREETYPE2 support available
+				   --- LITTLECMS support available
+				   --------------------------------------------------------------------
+				   To add a missing option, make sure you have the required
+				   library, and set the corresponding ROOT variable in the
+				   setup.py script.
+
+				   To check the build, run the selftest.py script.
+				   changing mode of build/scripts-2.7/pilfont.py from 600 to 755
+				   changing mode of build/scripts-2.7/pilconvert.py from 600 to 755
+				   changing mode of build/scripts-2.7/pilfile.py from 600 to 755
+				   changing mode of build/scripts-2.7/pildriver.py from 600 to 755
+				   changing mode of build/scripts-2.7/pilprint.py from 600 to 755
+
+				   warning: no previously-included files found matching '.hgignore'
+				   warning: no previously-included files found matching '.hgtags'
+				   warning: no previously-included files found matching 'BUILDME.bat'
+				   warning: no previously-included files found matching 'make-manifest.py'
+				   warning: no previously-included files found matching 'SHIP'
+				   warning: no previously-included files found matching 'SHIP.bat'
+				   warning: no previously-included files matching '*' found under directory 'Tests'
+				   changing mode of /tmp/build_10aejn8rdtx9u/.heroku/venv/bin/pilfont.py to 755
+				   changing mode of /tmp/build_10aejn8rdtx9u/.heroku/venv/bin/pilconvert.py to 755
+				   changing mode of /tmp/build_10aejn8rdtx9u/.heroku/venv/bin/pilfile.py to 755
+				   changing mode of /tmp/build_10aejn8rdtx9u/.heroku/venv/bin/pildriver.py to 755
+				   changing mode of /tmp/build_10aejn8rdtx9u/.heroku/venv/bin/pilprint.py to 755
+				 Running setup.py install for django-blog-zinnia
+
+				   no previously-included directories found matching 'docs/build'
+				   no previously-included directories found matching 'docs/epydoc'
+				   no previously-included directories found matching 'docs/coverage'
+				   no previously-included directories found matching 'zinnia/static/zinnia/css/.sass-cache'
+				 Running setup.py install for django-mptt
+
+				   warning: no files found matching '*.json' under directory 'mptt'
+				 Running setup.py install for django-tagging
+
+				 Running setup.py install for django-xmlrpc
+
+				 Running setup.py install for psycopg2
+				   building 'psycopg2._psycopg' extension
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/psycopgmodule.c -
+		o build/temp.linux-x86_64-2.7/psycopg/psycopgmodule.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/green.c -o build/
+		temp.linux-x86_64-2.7/psycopg/green.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/pqpath.c -o build
+		/temp.linux-x86_64-2.7/psycopg/pqpath.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/utils.c -o build/
+		temp.linux-x86_64-2.7/psycopg/utils.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/bytes_format.c -o
+		 build/temp.linux-x86_64-2.7/psycopg/bytes_format.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/connection_int.c
+		-o build/temp.linux-x86_64-2.7/psycopg/connection_int.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/connection_type.c
+		 -o build/temp.linux-x86_64-2.7/psycopg/connection_type.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/cursor_int.c -o b
+		uild/temp.linux-x86_64-2.7/psycopg/cursor_int.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/cursor_type.c -o
+		build/temp.linux-x86_64-2.7/psycopg/cursor_type.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/lobject_int.c -o
+		build/temp.linux-x86_64-2.7/psycopg/lobject_int.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/lobject_type.c -o
+		 build/temp.linux-x86_64-2.7/psycopg/lobject_type.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/notify_type.c -o
+		build/temp.linux-x86_64-2.7/psycopg/notify_type.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/xid_type.c -o bui
+		ld/temp.linux-x86_64-2.7/psycopg/xid_type.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_asis.c -o
+		 build/temp.linux-x86_64-2.7/psycopg/adapter_asis.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_binary.c
+		-o build/temp.linux-x86_64-2.7/psycopg/adapter_binary.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_datetime.
+		c -o build/temp.linux-x86_64-2.7/psycopg/adapter_datetime.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_list.c -o
+		 build/temp.linux-x86_64-2.7/psycopg/adapter_list.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_pboolean.
+		c -o build/temp.linux-x86_64-2.7/psycopg/adapter_pboolean.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_pdecimal.
+		c -o build/temp.linux-x86_64-2.7/psycopg/adapter_pdecimal.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_pint.c -o
+		 build/temp.linux-x86_64-2.7/psycopg/adapter_pint.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_pfloat.c
+		-o build/temp.linux-x86_64-2.7/psycopg/adapter_pfloat.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/adapter_qstring.c
+		 -o build/temp.linux-x86_64-2.7/psycopg/adapter_qstring.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/microprotocols.c
+		-o build/temp.linux-x86_64-2.7/psycopg/microprotocols.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/microprotocols_pr
+		oto.c -o build/temp.linux-x86_64-2.7/psycopg/microprotocols_proto.o -Wdeclaration-after-statement
+				   gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototype
+		s -fPIC -DPSYCOPG_DEFAULT_PYDATETIME=1 -DPSYCOPG_VERSION="2.4.5 (dt dec pq3 ext)" -DPG_VERSION_HEX=0
+		x080409 -DPSYCOPG_EXTENSIONS=1 -DPSYCOPG_NEW_BOOLEAN=1 -DHAVE_PQFREEMEM=1 -I/usr/local/include/pytho
+		n2.7 -I. -I/usr/include/postgresql -I/usr/include/postgresql/8.4/server -c psycopg/typecast.c -o bui
+		ld/temp.linux-x86_64-2.7/psycopg/typecast.o -Wdeclaration-after-statement
+				   gcc -pthread -shared build/temp.linux-x86_64-2.7/psycopg/psycopgmodule.o build/temp.linux
+		-x86_64-2.7/psycopg/green.o build/temp.linux-x86_64-2.7/psycopg/pqpath.o build/temp.linux-x86_64-2.7
+		/psycopg/utils.o build/temp.linux-x86_64-2.7/psycopg/bytes_format.o build/temp.linux-x86_64-2.7/psyc
+		opg/connection_int.o build/temp.linux-x86_64-2.7/psycopg/connection_type.o build/temp.linux-x86_64-2
+		.7/psycopg/cursor_int.o build/temp.linux-x86_64-2.7/psycopg/cursor_type.o build/temp.linux-x86_64-2.
+		7/psycopg/lobject_int.o build/temp.linux-x86_64-2.7/psycopg/lobject_type.o build/temp.linux-x86_64-2
+		.7/psycopg/notify_type.o build/temp.linux-x86_64-2.7/psycopg/xid_type.o build/temp.linux-x86_64-2.7/
+		psycopg/adapter_asis.o build/temp.linux-x86_64-2.7/psycopg/adapter_binary.o build/temp.linux-x86_64-
+		2.7/psycopg/adapter_datetime.o build/temp.linux-x86_64-2.7/psycopg/adapter_list.o build/temp.linux-x
+		86_64-2.7/psycopg/adapter_pboolean.o build/temp.linux-x86_64-2.7/psycopg/adapter_pdecimal.o build/te
+		mp.linux-x86_64-2.7/psycopg/adapter_pint.o build/temp.linux-x86_64-2.7/psycopg/adapter_pfloat.o buil
+		d/temp.linux-x86_64-2.7/psycopg/adapter_qstring.o build/temp.linux-x86_64-2.7/psycopg/microprotocols
+		.o build/temp.linux-x86_64-2.7/psycopg/microprotocols_proto.o build/temp.linux-x86_64-2.7/psycopg/ty
+		pecast.o -L/usr/lib -lpq -o build/lib.linux-x86_64-2.7/psycopg2/_psycopg.so
+
+				   no previously-included directories found matching 'doc/src/_build'
+				 Running setup.py install for pyparsing
+
+			   Successfully installed BeautifulSoup Django Pillow django-blog-zinnia django-mptt django-tagg
+		ing django-xmlrpc psycopg2 pyparsing
+			   Cleaning up...
+		-----> Injecting Django settings...
+			   Injecting code into ./bryanBlog/settings.py to read from DATABASE_URL
+		-----> Discovering process types
+			   Procfile declares types         -> (none)
+			   Default types for Python/Django -> web
+		-----> Compiled slug size is 10.8MB
+		-----> Launching... done, v4
+			   http://warm-snow-8555.herokuapp.com deployed to Heroku
+
+		To git@heroku.com:warm-snow-8555.git
+		 * [new branch]      master -> master
+	Syndb the database on heroku
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>heroku run python manage.py sync
+		db
+		Running python manage.py syncdb attached to terminal... up, run.1
+		Creating tables ...
+		Creating table auth_permission
+		Creating table auth_group_permissions
+		Creating table auth_group
+		Creating table auth_user_user_permissions
+		Creating table auth_user_groups
+		Creating table auth_user
+		Creating table django_content_type
+		Creating table django_session
+		Creating table django_site
+		Creating table django_comments
+		Creating table django_comment_flags
+		Creating table django_admin_log
+		Creating table tagging_tag
+		Creating table tagging_taggeditem
+		Creating table zinnia_category
+		Creating table zinnia_entry_categories
+		Creating table zinnia_entry_related
+		Creating table zinnia_entry_authors
+		Creating table zinnia_entry_sites
+		Creating table zinnia_entry
+
+		You just installed Django's auth system, which means you don't have any superusers defined.
+		Would you like to create one now? (yes/no): yes
+		Username (leave blank to use 'u12424'): E-mail address: bryan@wolfford.com
+		bryan@wolfford.com
+		Password: 
+		Password (again): 
+		Superuser created successfully.
+		Installing custom SQL ...
+		Installing indexes ...
+		Installed 0 object(s) from 0 fixture(s)
 	
 Testing
 	Test that the Django app runs in the local venv
@@ -1876,3 +2564,8 @@ Testing
 		End troubleshoot line 1707
 	Verify that /weblog is working
 		http://127.0.0.1:8000/weblog/ 
+	Verify that the Heroku web process is up
+		(venv) C:\Users\Initia7_B\Documents\HPU\CSCI 3771\csci3771finalProj>heroku ps
+		Process  State       Command
+		-------  ----------  ------------------------------------
+		web.1    up for 12m  python ./manage.py runserver 0.0.0..
