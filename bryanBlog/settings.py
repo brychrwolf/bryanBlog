@@ -27,7 +27,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Pacific/Honolulu'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -120,13 +120,13 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'tagging',
-	'mptt',
-	'zinnia',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+	'tagging',
+	'mptt',
+	'zinnia',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -159,7 +159,8 @@ LOGGING = {
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-  'django.core.context_processors.auth',
+  #'django.core.context_processors.auth',
+  'django.contrib.auth.context_processors.auth',
   'django.core.context_processors.i18n',
   'django.core.context_processors.request',
   'django.core.context_processors.media',
